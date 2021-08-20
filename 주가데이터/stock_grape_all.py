@@ -62,6 +62,12 @@ for file in file_list_py:
 
     new_df.index = new_df.index.astype('datetime64[ns]')
 
+    # new_df 새로운파일로 저장
+    # new_df.to_csv("PTM_DATA_FILE/"+file[0:-4]+"_ptm.csv",
+    #               sep=',',
+    #               na_rep='NaN')
+
+
     ax_sub = plt.subplot(3,4,i)
     ax_sub.set_title(file, fontsize=8)
     mpl_finance.candlestick2_ohlc(ax_sub, new_df['open'], new_df['high'],
